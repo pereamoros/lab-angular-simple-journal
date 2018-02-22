@@ -1,0 +1,11 @@
+<div *ngIf="!entries">
+  <p>It's loading <p>
+</div>
+<div *ngIf="entries">
+  <h1>Entries List</h1>
+  <div *ngFor="let entry of entries">
+    <p>{{ entry.title }}</p>
+    <p>{{ entry.date }}</p>
+    <!-- <app-single-entry></app-single-entry> -->
+  </div>
+</div>
