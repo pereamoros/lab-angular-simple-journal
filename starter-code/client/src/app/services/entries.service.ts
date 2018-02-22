@@ -6,10 +6,18 @@ import { Http, Response} from '@angular/http'
 export class EntriesService {
  API_URL ='http://localhost:3000'
 
+ idEntry: number;
+ 
  constructor(private http: Http) { }
 
  getList() :Promise<any> {
    return this.http.get(`${this.API_URL}/journal-entries`)
+   .toPromise()
+   .then((res: Response) => res.json())
+ }
+
+ getEntry(id) :Promise<any> {
+  return this.http.get(`${this.API_URL}/journal-entries/${id}`)
    .toPromise()
    .then((res: Response) => res.json())
  }

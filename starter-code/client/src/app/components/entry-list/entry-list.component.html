@@ -4,8 +4,12 @@
 <div *ngIf="entries">
   <h1>Entries List</h1>
   <div *ngFor="let entry of entries">
-    <p>{{ entry.title }}</p>
-    <p>{{ entry.date }}</p>
-    <!-- <app-single-entry></app-single-entry> -->
+    <!-- <app-single-entry [entry]="entry"></app-single-entry> -->
+    <a [routerLink]="['/journal-entries', entry._id]">
+      <div>
+        <p>{{ entry.title }}</p>
+        <p>{{ entry.date }}</p>
+      </div>
+    </a>
   </div>
 </div>
